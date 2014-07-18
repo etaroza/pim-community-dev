@@ -111,10 +111,7 @@ class OrmSelectorExtension extends AbstractExtension
      */
     protected function matchDatasource(DatagridConfiguration $config)
     {
-        $datasourceType = $config->offsetGetByPath(Builder::DATASOURCE_TYPE_PATH);
-
-        if (DatasourceTypes::DATASOURCE_PRODUCT === $datasourceType &&
-            PimCatalogExtension::DOCTRINE_ORM === $this->storageDriver) {
+        if (PimCatalogExtension::DOCTRINE_ORM === $this->storageDriver) {
             return true;
         }
 
